@@ -25,7 +25,7 @@
  * Parameters:
  * @s:- The string to write.
  * @len: - The length of the string.
- * @count - A pointer to the count of characters written.
+ * @count: - A pointer to the count of characters written.
  * Usage:
  *   char *message = "Hello, World!";
  *   int length = strlen(message);
