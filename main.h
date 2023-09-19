@@ -11,11 +11,11 @@
  * @specifier: The format specifier character (e.g., 'c', 's', 'd', etc.).
  * @handler: A pointer to the handler function for this specifier.
  */
-struct FormatSpecifier
+typedef struct FormatSpecifier
 {
 	char specifier;
 	int (*handler)(va_list args);
-};
+} FormatSpecifier;
 
 int _putchar(char c);
 int _strlen(const char *str);

@@ -5,10 +5,14 @@
 #include <string.h>
 
 /**
-  * struct FormatSpecifier - format Specifier
-  * description: Format specifier character and its handler.
-  */
-struct FormatSpecifier formatSpecifiers[] = {
+ * handle_format_specifier - Handles a specific format specifier character.
+ * @format_char: The format specifier character(e.g., 'c', 's', 'd', etc.).
+ * @args: Argument list for the format specifier( va_list).
+ * Return: 1.
+ */
+int handle_format_specifier(const char format_char, va_list args)
+{
+	FormatSpecifier formatSpecifiers[] = {
 	{'c', handle_char},
 	{'s', handle_string},
 	{'%', handle_percent},
@@ -22,14 +26,6 @@ struct FormatSpecifier formatSpecifiers[] = {
 	{'S', handle_non_printable},
 	{'p', handle_addr},
 };
-/**
- * handle_format_specifier - Handles a specific format specifier character.
- * @format_char: The format specifier character(e.g., 'c', 's', 'd', etc.).
- * @args: Argument list for the format specifier( va_list).
- * Return: 1.
- */
-int handle_format_specifier(const char format_char, va_list args)
-{
 	size_t i;
 
 	for (i = 0; i < sizeof(formatSpecifiers) / sizeof(formatSpecifiers[0]); i++)
