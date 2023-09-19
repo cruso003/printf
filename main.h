@@ -7,23 +7,25 @@
 #include <stdlib.h>
 
 /**
- * Macro: WRITE_CHAR(c, count)
- * Description: Writes a single char 'c' to stdout & increments d 'count' variable
+ * Macro - WRITE_CHAR(c, count)
+ * Description: Writes a single char 'c' to stdout &
+ * increments d 'count' variable
  * Parameters:
- * c - The character to write.
- *   count - A pointer to the count of characters written.
- * Usage:
+ * @c: The character to write.
+ * @count: - A pointer to the count of characters written.
+ * Usage
  *   WRITE_CHAR('A', char_count);
  */
 #define WRITE_CHAR(c, count) do { _putchar(c); (*(count))++; } while (0)
 
-/* 
- * Macro: WRITE_STRING(s, len, count)
- * Description: Writes a string 's' of length 'len' to stdout and updates the 'count' variable.
+/**
+ * Macro - WRITE_STRING(s, len, count)
+ * Description: Writes a string 's' of length 'len' to stdout
+ * and updates the 'count' variable.
  * Parameters:
- *   s - The string to write.
- *   len - The length of the string.
- *   count - A pointer to the count of characters written.
+ * @s:- The string to write.
+ * @len: - The length of the string.
+ * @count - A pointer to the count of characters written.
  * Usage:
  *   char *message = "Hello, World!";
  *   int length = strlen(message);
