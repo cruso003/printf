@@ -5,16 +5,21 @@
 #include <stdlib.h>
 
 /**
- * handle_int - handling integers specifiers d and i
- * @args: argument list
- * @count: integer pointer count.
- * Return: len
+ * handle_d - Handle the %d specifier.
+ * @args: Argument list.
+ * Return: Count of characters written.
  */
-int handle_int(va_list args, int *count)
+int handle_d(va_list args)
 {
-	int num = va_arg(args, int), i, j, len = 0, is_negative;
+	int num = va_arg(args, int);
+	int i, j, len = 0, is_negative = 0, count = 0;
 	char int_str[BUFFER_SIZE], temp;
 
+	if (num < 0)
+	{
+		is_negative = 1;
+		num = -num;
+	}
 	if (num == 0)
 	{
 		int_str[0] = '0';
@@ -22,12 +27,6 @@ int handle_int(va_list args, int *count)
 	}
 	else
 	{
-		is_negative = 0;
-		if (num < 0)
-		{
-			is_negative = 1;
-			num = -num;
-		}
 		while (num > 0)
 		{
 			int_str[len] = '0' + (num % 10);
@@ -49,7 +48,18 @@ int handle_int(va_list args, int *count)
 	for (i = 0; i < len; i++)
 	{
 		_putchar(int_str[i]);
-		(*count)++;
+		count++;
 	}
-	return (len);
+	return (count);
 }
+
+/**
+ * handle_i - Handle the %i specifier.
+ * @args: Argument list.
+ * Return: Count of characters written.
+ */
+int handle_i(va_list args)
+{
+	return (handle_d(args));
+}
+

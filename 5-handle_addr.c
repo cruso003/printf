@@ -7,16 +7,16 @@
 #include <string.h>
 
 /**
- * handle_addr - handle specifier for printing memory address
- * @args: argument list
- * @count: argument count
- * Return: count
+ * handle_addr - Handle specifier for printing memory address.
+ * @args: Argument list.
+ * Return: Count of characters written.
  */
-int handle_addr(va_list args, int *count)
+int handle_addr(va_list args)
 {
 	uintptr_t addr = va_arg(args, uintptr_t);
 	char addr_str[BUFFER_SIZE], hex_digit;
-	int len = 0, i, digit;
+	int len = 0, digit, i;
+	int count = 0;
 
 	_putchar('0');
 	_putchar('x');
@@ -41,6 +41,6 @@ int handle_addr(va_list args, int *count)
 		}
 		len += 2;
 	}
-	*count += len;
-	return (*count);
+	count += len;
+	return (count);
 }

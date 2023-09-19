@@ -6,16 +6,15 @@
 #include <stdlib.h>
 
 /**
- * handle_non_printable - handles d specifier 4 non-profitable chars using %S
- * @args: argument list
- * @count: argument count
- * Return: argument count pointer
+ * handle_non_printable - Handles specifier for non-printable characters.
+ * @args: Argument list.
+ * Return: Count of characters written.
  */
-int handle_non_printable(va_list args, int *count)
+int handle_non_printable(va_list args)
 {
 	char *input = va_arg(args, char *);
-	int i;
 	char current_char;
+	int count = 0, i;
 
 	for (i = 0; input[i] != '\0'; i++)
 	{
@@ -28,13 +27,13 @@ int handle_non_printable(va_list args, int *count)
 					(current_char / 16) + '0' : (current_char / 16) - 10 + 'A');
 			_putchar((current_char % 16) < 10 ?
 					(current_char % 16) + '0' : (current_char % 16) - 10 + 'A');
-			(*count) += 4;
+			count += 4;
 		}
 		else
 		{
 			_putchar(current_char);
-			(*count) += 1;
+			count++;
 		}
 	}
-	return (*count);
+	return (count);
 }

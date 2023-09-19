@@ -46,10 +46,13 @@ int handle_string(va_list args)
 }
 /**
  * handle_percent - Handles percent specifier
+ * @args: void argument
  * Return: 1.
 */
-int handle_percent(void)
+int handle_percent(va_list args)
 {
+	(void)args;
+
 	_putchar('%');
 	return (1);
 }
