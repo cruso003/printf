@@ -2,7 +2,6 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdarg.h>
-
 /**
  * handle_char - Helper function to write a character to stdout.
  * @args: The argument list.
@@ -15,32 +14,36 @@ int handle_char(va_list args)
 	_putchar(_char);
 	return (1);
 }
-
 /**
  * handle_string - Helper function to write a string to stdout.
  * @args: The argument list.
- * @count: argument count
  * Return: len.
  */
-int handle_string(va_list args, int *count)
+int handle_string(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int len = 0;
+	int len;
+	int i;
 
 	if (!str)
 	{
 		str = "(null)";
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
+		{
+			_putchar(str[i]);
+		}
 	}
-	while (str[len] != '\0')
+	else
 	{
-		_putchar(str[len]);
-		len++;
-	{
-
-	*count += len;
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
+		{
+			_putchar(str[i]);
+		}
+	}
 	return (len);
 }
-
 /**
  * handle_percent - Handles percent specifier
  * Return: 1.
