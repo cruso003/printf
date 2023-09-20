@@ -17,32 +17,33 @@ int handle_char(va_list args)
 /**
  * handle_string - Helper function to write a string to stdout.
  * @args: The argument list.
- * Return: len.
+ * Return: length.
  */
 int handle_string(va_list args)
 {
 	char *str = va_arg(args, char *);
-	int len;
+	int length;
 	int i;
 
 	if (!str)
 	{
 		str = "(null)";
-		len = _strlen(str);
-		for (i = 0; i < len; i++)
+		length = _strlen(str);
+		for (i = 0; i < length; i++)
 		{
 			_putchar(str[i]);
 		}
+		return (length);
 	}
 	else
 	{
-		len = _strlen(str);
-		for (i = 0; i < len; i++)
+		length = _strlen(str);
+		for (i = 0; i < length; i++)
 		{
 			_putchar(str[i]);
 		}
 	}
-	return (len);
+	return (length);
 }
 /**
  * handle_percent - Handles percent specifier
