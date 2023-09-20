@@ -54,5 +54,13 @@ int main(void)
 	len2 = printf("length:[%!]\n");
 	_printf("%d, %i\n", len, len);
 	printf("%d, %i\n", len2, len2);
+	_printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	printf("%d + %d = %d\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	_printf("%d", INT_MIN);
+	printf("%d", INT_MIN);
+	_printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	printf("%i + %i = %i\n", INT_MIN, INT_MAX, (INT_MIN + INT_MAX));
+	_printf("%d\n", INT_MIN);
+	printf("%d\n", INT_MIN);
 	return (0);
 }
