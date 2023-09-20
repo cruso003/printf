@@ -27,7 +27,7 @@ int handle_string(va_list args)
 
 	if (!str)
 	{
-		str == "(null)";
+		str = "(null)";
 		len = _strlen(str);
 		for (i = 0; i < len; i++)
 		{
