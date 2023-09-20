@@ -33,6 +33,7 @@ int handle_string(va_list args)
 		{
 			_putchar(str[i]);
 		}
+		return (len);
 	}
 	else
 	{

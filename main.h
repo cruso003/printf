@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define BUFFER_SIZE 1024
+
 /**
  * struct FormatSpecifier - Format specifier character and its handler.
  * @specifier: The format specifier character (e.g., 'c', 's', 'd', etc.).
