@@ -9,6 +9,8 @@
  */
 int handle_char(va_list args)
 {
+	va_list(args)
+
 	char _char = (char)va_arg(args, int);
 
 	_putchar(_char);
