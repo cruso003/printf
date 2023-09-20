@@ -25,6 +25,7 @@ int handle_format_specifier(const char format_char, va_list args)
 		{'S', handle_non_printable},
 		{'p', handle_addr},
 		{'r', handle_revs},
+		{'R', handle_rot13},
 	};
 	size_t i;
 
