@@ -9,6 +9,7 @@
  * @args: Argument list.
  * Return: Count of characters written.
  */
+int handle_d(va_list args);
 int handle_d(va_list args)
 {
 	int num = va_arg(args, int);
@@ -18,9 +19,8 @@ int handle_d(va_list args)
 	if (num == INT_MIN)
 	{
 		strcpy(int_str, "-2147483648");
-		len = strlen(int_str);
+		len = _strlen(int_str);
 	}
-	
 	if (num < 0)
 	{
 		is_negative = 1;
