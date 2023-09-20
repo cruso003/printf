@@ -15,6 +15,12 @@ int handle_d(va_list args)
 	int i, j, len = 0, is_negative = 0, count = 0;
 	char int_str[BUFFER_SIZE], temp;
 
+	if (num == INT_MIN)
+	{
+		strcpy(int_str, "-2147483648");
+		len = strlen(int_str);
+	}
+	
 	if (num < 0)
 	{
 		is_negative = 1;
