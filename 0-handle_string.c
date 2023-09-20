@@ -29,10 +29,6 @@ int handle_string(va_list args)
 	{
 		str = "(null)";
 		len = _strlen(str);
-
-
-
-
 		for (i = 0; i < len; i++)
 		{
 			_putchar(str[i]);
