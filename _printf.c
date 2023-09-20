@@ -36,7 +36,7 @@ int handle_format_specifier(const char format_char, va_list args)
 	}
 	_putchar('%');
 	_putchar(format_char);
-	return (1);
+	return (2);
 }
 /**
  * _printf - Custom printf that produces output according to a format.
