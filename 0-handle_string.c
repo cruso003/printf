@@ -56,4 +56,6 @@ int handle_percent(va_list args)
 
 	_putchar('%');
 	return (1);
+
+	va_end(args);
 }
