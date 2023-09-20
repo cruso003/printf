@@ -13,18 +13,18 @@
 int handle_format_specifier(const char format_char, va_list args)
 {
 	FormatSpecifier formatSpecifiers[] = {
-	{'c', handle_char},
-	{'s', handle_string},
-	{'d', handle_d},
-	{'i', handle_i},
-	{'b', handle_bin},
-	{'u', handle_unsigned_int},
-	{'o', handle_octal},
-	{'x', handle_hex_lowercase},
-	{'X', handle_hex_uppercase},
-	{'S', handle_non_printable},
-	{'p', handle_addr},
-};
+		{'c', handle_char},
+		{'s', handle_string},
+		{'d', handle_d},
+		{'i', handle_i},
+		{'b', handle_bin},
+		{'u', handle_unsigned_int},
+		{'o', handle_octal},
+		{'x', handle_hex_lowercase},
+		{'X', handle_hex_uppercase},
+		{'S', handle_non_printable},
+		{'p', handle_addr},
+	};
 	size_t i;
 
 	for (i = 0; i < sizeof(formatSpecifiers) / sizeof(formatSpecifiers[0]); i++)
@@ -36,7 +36,7 @@ int handle_format_specifier(const char format_char, va_list args)
 	}
 	_putchar('%');
 	_putchar(format_char);
-	return (1);
+	return (2);
 }
 /**
  * _printf - Custom printf that produces output according to a format.
@@ -64,15 +64,15 @@ int _printf(const char *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			 if (format[i] == '%')
-            {
-                _putchar('%');
-                count++;
-            }
-            else
-            {
-                count += handle_format_specifier(format[i], args);
-            }
+			if (format[i] == '%')
+			{
+				_putchar('%');
+				count++;
+			}
+			else
+			{
+				count += handle_format_specifier(format[i], args);
+			}
 		}
 		else
 		{
