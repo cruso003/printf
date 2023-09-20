@@ -15,7 +15,6 @@ int handle_format_specifier(const char format_char, va_list args)
 	FormatSpecifier formatSpecifiers[] = {
 	{'c', handle_char},
 	{'s', handle_string},
-	{'%', handle_percent},
 	{'d', handle_d},
 	{'i', handle_i},
 	{'b', handle_bin},
@@ -65,7 +64,15 @@ int _printf(const char *format, ...)
 				va_end(args);
 				return (-1);
 			}
-			count += handle_format_specifier(format[i], args);
+			 if (format[i] == '%')
+            {
+                _putchar('%');
+                count++;
+            }
+            else
+            {
+                count += handle_format_specifier(format[i], args);
+            }
 		}
 		else
 		{
