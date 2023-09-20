@@ -24,8 +24,8 @@ int handle_format_specifier(const char format_char, va_list args)
 		{'X', handle_hex_uppercase},
 		{'S', handle_non_printable},
 		{'p', handle_addr},
-};
-size_t i;
+	};
+	size_t i;
 
 	for (i = 0; i < sizeof(formatSpecifiers) / sizeof(formatSpecifiers[0]); i++)
 	{
