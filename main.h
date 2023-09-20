@@ -34,5 +34,6 @@ int handle_hex_lowercase(va_list args);
 int handle_hex_uppercase(va_list args);
 int handle_non_printable(va_list args);
 int handle_addr(va_list args);
+int handle_revs(va_list args);
 
 #endif

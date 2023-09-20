@@ -24,6 +24,7 @@ int handle_format_specifier(const char format_char, va_list args)
 		{'X', handle_hex_uppercase},
 		{'S', handle_non_printable},
 		{'p', handle_addr},
+		{'r', handle_revs},
 	};
 	size_t i;
 
@@ -48,6 +49,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	unsigned int i;
 	int count = 0;
+	
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
