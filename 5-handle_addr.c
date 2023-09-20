@@ -18,15 +18,20 @@ int handle_addr(va_list args)
 	int len = 0, digit, i;
 	int count = 0;
 
-	_putchar('0');
-	_putchar('x');
 	if (addr == 0)
 	{
-		_putchar('0');
-		len += 3;
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
+		len += 5;
 	}
 	else
 	{
+		_putchar('0');
+		_putchar('x');
+
 		while (addr != 0)
 		{
 			digit = addr % 16;
@@ -41,6 +46,7 @@ int handle_addr(va_list args)
 		}
 		len += 2;
 	}
+
 	count += len;
 	return (count);
 }
