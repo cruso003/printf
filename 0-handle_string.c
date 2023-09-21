@@ -29,10 +29,10 @@ int handle_string(va_list args)
 	{
 		str = "(null)";
 		len = _strlen(str);
-	
-	
-	
-	
+
+
+
+
 		for (i = 0; i < len; i++)
 		{
 			_putchar(str[i]);
@@ -53,7 +53,7 @@ int handle_string(va_list args)
  * handle_percent - Handles percent specifier
  * @args: void argument
  * Return: 1.
-*/
+ */
 int handle_percent(va_list args)
 {
 	(void)args;
