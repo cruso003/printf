@@ -10,7 +10,7 @@
 /**
  * struct FormatSpecifier - Format specifier character and its handler.
  * @specifier: The format specifier character (e.g., 'c', 's', 'd', etc.).
- * @handler: A pointer to the handler function for specifier.
+ * @handler: A pointer to the handler function.
  */
 typedef struct FormatSpecifier
 {
